@@ -1,0 +1,57 @@
+<h1>Tabla Registro Compra y Producción</h1>
+
+<mat-form-field class="full-width">
+    <mat-label>Buscar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Buscar en la tabla">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <!-- Columna Fecha -->
+    <ng-container matColumnDef="fecha">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="columna-primera">Fecha</th>
+        <td mat-cell *matCellDef="let element" class="columna-primera">{{element.fecha | date:'yyyy-MM-dd'}}</td>
+    </ng-container>
+
+    <!-- Columna Total Litros Leche -->
+    <ng-container matColumnDef="totalLitrosLeche">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="columna-segunda">Total Litros Leche</th>
+        <td mat-cell *matCellDef="let element" class="columna-primera">{{element.totalLitrosLeche | number:'1.0-0'}}
+        </td>
+    </ng-container>
+
+    <!-- Columna Total Compra Leche -->
+    <ng-container matColumnDef="totalCompraLeche">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="columna-primera">Total Compra Leche</th>
+        <td mat-cell *matCellDef="let element" class="columna-primera">{{formatCurrency (element.totalCompraLeche)}}</td>
+    </ng-container>
+
+    <!-- Columna Total Productos Elaborados -->
+    <ng-container matColumnDef="totalProductosElaborados">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="columna-segunda">Total Productos Elaborados</th>
+        <td mat-cell *matCellDef="let element" class="columna-segunda">{{element.totalProductosElaborados}}</td>
+    </ng-container>
+
+    <!-- Columna Total Kg Queso -->
+    <ng-container matColumnDef="totalKgQueso">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="columna-segunda">Total Kg Queso</th>
+        <td mat-cell *matCellDef="let element" class="columna-segunda">{{element.totalKgQueso | number:'1.0-0'}}</td>
+    </ng-container>
+
+    <!-- Columna Total Producción -->
+    <ng-container matColumnDef="totalProduccion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="columna-segunda">Total Producción</th>
+        <td mat-cell *matCellDef="let element" class="columna-segunda">{{formatCurrency (element.totalProduccion)}}</td>
+    </ng-container>
+
+    <!-- Columna Ganancias -->
+    <ng-container matColumnDef="ganancias">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="columna-segunda">Ganancias</th>
+        <td mat-cell *matCellDef="let element" class="highlight-ganancias">{{formatCurrency (element.ganancias)}}</td>
+    </ng-container>
+
+    <!-- Header y rows -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>

@@ -1,0 +1,31 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Fecha Column -->
+    <ng-container matColumnDef="fecha">
+        <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.fecha | date:'yyyy-MM-dd'}} </mat-cell>
+    </ng-container>
+
+    <!-- Cantidad Column -->
+    <ng-container matColumnDef="cantidad_litros">
+        <mat-header-cell *matHeaderCellDef> Litros </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.cantidad_litros}} </mat-cell>
+    </ng-container>
+
+    <!-- Costo Column -->
+    <ng-container matColumnDef="costo_total">
+        <mat-header-cell *matHeaderCellDef> Costo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{formatCurrency(element.costo_total)}} </mat-cell>
+    </ng-container>
+
+    <!-- Acciones Column -->
+    <ng-container matColumnDef="acciones">
+        <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <button mat-button color="warn" (click)="deleteCostoCompraLeche(element.id)">Eliminar</button>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

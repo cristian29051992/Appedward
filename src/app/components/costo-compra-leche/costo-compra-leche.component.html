@@ -1,0 +1,36 @@
+<div class="form-container">
+    <h2>Registro compra de Leche</h2>
+    <form [formGroup]="compraLecheForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <mat-form-field class="half-width">
+                <mat-label>Fecha</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="fecha">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="half-width">
+                <mat-label>Cantidad de litros</mat-label>
+                <input matInput type="number" formControlName="cantidad_litros">
+            </mat-form-field>
+
+            <mat-form-field class="half-width">
+                <mat-label>Costo Total</mat-label>
+                <input matInput type="text" formControlName="costo_total" placeholder="0">
+            </mat-form-field>
+        </div>
+
+        <div class="button-container">
+            <button mat-raised-button color="primary" type="submit">Guardar</button>
+        </div>
+    </form>
+</div>
+
+<div class="containercosto">
+    <div class="costo-actual-leche-container">
+        <h3>Costo Actual Leche:</h3>
+        <mat-form-field class="full-width">
+            <input matInput type="text" style="color: black;" [value]="formattedCostoActualLeche" disabled>
+        </mat-form-field>
+    </div>
+</div>

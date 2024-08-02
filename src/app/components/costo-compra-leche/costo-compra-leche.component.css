@@ -1,0 +1,80 @@
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 16px;
+    position: relative;
+    /* Para posicionar el popup dentro del contenedor */
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: -20px;
+}
+
+mat-form-field.half-width {
+    flex: 1;
+    min-width: 2px;
+}
+
+button {
+    margin-top: 8px;
+    float: right;
+}
+
+/* Estilo para eliminar las flechas de incremento/decremento en Chrome, Safari y Edge */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Estilo para eliminar las flechas de incremento/decremento en Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* src/app/components/costo-compra-leche/costo-compra-leche.component.css */
+
+.containercosto {
+    width: 60%;
+    padding: 0px; /* Ajusta el padding si es necesario */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+    margin-left: 30px;
+    margin-top: -20px;
+}
+
+.costo-actual-leche-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(250, 250, 250);
+    padding: 8px; /* Añade padding para evitar que los elementos se salgan */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+.costo-actual-leche-container h3 {
+    margin: 0;
+    margin-right: 2px; /* Espacio entre el encabezado y el campo de entrada */
+    flex-shrink: 0; /* Evita que el h3 se reduzca de tamaño */
+    padding-bottom: 18px;
+}
+
+.full-width {
+    flex-grow: 1;
+    margin: 0;
+}
+
+input[matInput] {
+    text-align: left;
+    color: #000;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    border: none;
+    padding: 0;    
+}

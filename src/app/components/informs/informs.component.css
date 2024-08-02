@@ -1,0 +1,95 @@
+.modal-content {
+    max-height: 80vh;
+    /* Ajusta esta altura según sea necesario */
+    overflow-y: auto;
+    /* Permite el desplazamiento vertical */
+    padding: 20px;
+    /* Ajusta el espacio interno del modal */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    /* Ajusta el tamaño del logo */
+}
+
+.company-details {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.report-date {
+    text-align: right;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    /* Espacio inferior entre tablas */
+}
+
+.form-container {
+    margin: 20px;
+}
+
+.inline-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input-field {
+    flex: 1 1 auto;
+    min-width: 200px;
+    margin-right: 30px;
+}
+
+.button-container {
+    margin-top: -10px;
+}
+
+button[type="submit"] {
+    width: 100px;
+    height: 40px;
+}
+
+.sumatorias {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    text-align: right; /* Alinea el texto a la derecha en el contenedor */
+}
+
+.sumatorias table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina el espacio entre celdas */
+}
+
+.sumatorias td {
+    padding: 8px; /* Ajusta el espaciado dentro de las celdas */
+    border-bottom: 1px solid #ddd; /* Añade una línea inferior a las celdas para separación */
+}
+
+.sumatorias td:first-child {
+    text-align: right; /* Alinea los títulos a la izquierda */
+    width: 82%; /* Ajusta el ancho para los títulos */
+    padding-right: 10px; /* Espacio a la derecha del título */
+}
+
+.sumatorias td:last-child {
+    text-align: left; /* Alinea los valores a la derecha */
+    width: 18%; /* Ajusta el ancho para los valores */
+    padding-left: 5px; /* Espacio a la izquierda del número */
+}
+
+.sumatorias strong {
+    color: #333; /* Color del texto en negrita */
+}

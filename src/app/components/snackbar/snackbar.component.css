@@ -1,0 +1,29 @@
+  .esnack_exito {
+    position: fixed; /* Fija la posición del snack bar */
+    bottom: 0; /* Ajusta la posición vertical según tus necesidades */
+    left: 0; /* Ajusta la posición horizontal según tus necesidades */
+    width: 100%; /* Ajusta el ancho del snack bar según tus necesidades */
+    background-color: #16a47b; /* Color de fondo deseado */
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px; /* Ajusta el espaciado interno según tus necesidades */
+    box-shadow: none; /* Elimina la sombra */
+    z-index: 9999; /* Asegura que el snack bar esté en la capa superior */
+  }
+ 
+  .esnack_error {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: red; /* Color de fondo para el error */
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    box-shadow: none;
+    z-index: 9999;
+  }
+  
+  

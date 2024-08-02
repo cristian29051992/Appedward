@@ -1,0 +1,36 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Fecha Column -->
+    <ng-container matColumnDef="fecha">
+        <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.fecha | date:'yyyy-MM-dd'}} </mat-cell>
+    </ng-container>
+
+    <!-- Nombre del Producto Column -->
+    <ng-container matColumnDef="producto_nombre">
+        <mat-header-cell *matHeaderCellDef> Producto </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.producto_nombre}} </mat-cell>
+    </ng-container>
+
+    <!-- Cantidad KG Column -->
+    <ng-container matColumnDef="cantidad_kg">
+        <mat-header-cell *matHeaderCellDef> Cantidad (kg) </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.cantidad_kg}} </mat-cell>
+    </ng-container>
+
+    <!-- Valor Total Column -->
+    <ng-container matColumnDef="valor_total">
+        <mat-header-cell *matHeaderCellDef> Valor Total </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{formatCurrency(element.valor_total)}} </mat-cell>
+    </ng-container>
+
+    <!-- Acciones Column -->
+    <ng-container matColumnDef="acciones">
+        <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <button mat-button color="warn" (click)="deleteProduccion(element.produccion_id)">Eliminar</button>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

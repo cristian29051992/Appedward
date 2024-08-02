@@ -1,0 +1,116 @@
+<div class="modal-content">
+    <div class="header">
+        <img src="assets/logo.png" alt="Logo de la Empresa" class="logo">
+        <div class="company-details">
+            <h1>Lacteos Chairense</h1>
+            <p>Nit: 901433347</p>
+            <p>Tel: 3118407254</p>
+        </div>
+        <div class="report-date">
+            <p>{{ fechaActual | date:'yyyy-MM-dd' }}</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Formulario para seleccionar fechas -->
+    <div class="form-container">
+        <form (ngSubmit)="loadDatos()" class="inline-form">
+            <mat-form-field class="input-field" appearance="fill">
+                <mat-label>Fecha Inicio</mat-label>
+                <input matInput [matDatepicker]="picker1" [(ngModel)]="fechaInicio" name="fechaInicio" required>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="input-field" appearance="fill">
+                <mat-label>Fecha Fin</mat-label>
+                <input matInput [matDatepicker]="picker2" [(ngModel)]="fechaFin" name="fechaFin" required>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+
+            <div class="button-container">
+                <button mat-raised-button color="primary" type="submit">Cargar Datos</button>
+            </div>
+        </form>
+    </div>
+
+    <hr>
+
+    <h2>Registro de Compra de Leche</h2>
+    <table mat-table [dataSource]="costoCompraLeche" class="mat-elevation-z8">
+        <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef> Fecha </th>
+            <td mat-cell *matCellDef="let element"> {{ element.fecha | date:'yyyy-MM-dd' }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cantidad_litros">
+            <th mat-header-cell *matHeaderCellDef> Cantidad de Litros </th>
+            <td mat-cell *matCellDef="let element"> {{ element.cantidad_litros }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="costo_total">
+            <th mat-header-cell *matHeaderCellDef> Costo Total </th>
+            <td mat-cell *matCellDef="let element"> {{ formatCurrency(element.costo_total) }} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['fecha', 'cantidad_litros', 'costo_total']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['fecha', 'cantidad_litros', 'costo_total'];"></tr>
+    </table>
+
+    <h2>Registro de Producción</h2>
+    <table mat-table [dataSource]="produccion" class="mat-elevation-z8">
+        <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef> Fecha </th>
+            <td mat-cell *matCellDef="let element"> {{ element.fecha | date:'yyyy-MM-dd' }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nombre_producto">
+            <th mat-header-cell *matHeaderCellDef> Nombre del Producto </th>
+            <td mat-cell *matCellDef="let element"> {{ element.nombre_producto }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cantidad_kg">
+            <th mat-header-cell *matHeaderCellDef> Cantidad (kg) </th>
+            <td mat-cell *matCellDef="let element"> {{ element.cantidad_kg }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="valor_total">
+            <th mat-header-cell *matHeaderCellDef> Valor Total </th>
+            <td mat-cell *matCellDef="let element"> {{ formatCurrency(element.valor_total) }} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+    <div class="sumatorias">
+        <table>
+            <tbody>
+                <tr>
+                    <td><strong>Total Costo Compra Leche:</strong></td>
+                    <td>{{ formatCurrency(totalCostoCompraLeche) }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Cantidad Litros:</strong></td>
+                    <td>{{ formatNumber(totalCantidadLitros) }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Producción:</strong></td>
+                    <td>{{ formatCurrency(totalProduccion) }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Total (Kg) producidos:</strong></td>
+                    <td>{{ formatNumber (totalKgProducidos) }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Ganancias Brutas:</strong></td>
+                    <td>{{ formatCurrency(gananciasBrutas) }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

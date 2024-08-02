@@ -1,0 +1,62 @@
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+}
+
+/* Estilos para los campos de entrada */
+mat-form-field {
+    flex: 1;
+    width: 100%;
+}
+
+/* Estilos para el botón de guardar */
+button[mat-raised-button] {
+    white-space: nowrap;
+}
+
+/* Estilos para el contenedor de la tabla */
+.table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 16px;
+}
+
+/* Estilos para la tabla */
+mat-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las celdas de la tabla */
+mat-header-cell, mat-cell {
+    padding: 3px 5px; /* Ajuste del padding horizontal */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilos para las filas de la tabla */
+mat-row {
+    transition: background-color 0.3s;
+}
+
+mat-row:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos para los encabezados de la tabla */
+mat-header-cell {
+    font-weight: bold;
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+}

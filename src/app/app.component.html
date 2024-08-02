@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+  <span>Mi App</span>
+  <span class="spacer"></span>
+  <button mat-button (click)="openEditarCostoLecheDialog()">
+    <mat-icon>attach_money</mat-icon>
+    Costo Leche
+  </button>
+  <button mat-button (click)="openListaProductosDialog()">
+    <mat-icon>list_alt_add</mat-icon>
+    Productos
+  </button>
+  <button mat-button (click)="openInforms()">
+    <mat-icon>inform</mat-icon>
+    Informe
+  </button>
+  <button mat-button (click)="openComprasLecheDialog()">
+    <mat-icon>shopping_cart</mat-icon>
+    Compras Leche
+  </button>
+  <button mat-button (click)="openproducciondialog()">
+    <mat-icon>factory</mat-icon>
+    Producción
+  </button>
+</mat-toolbar>
+
+
+
+<div class="main-container">
+  <div class="top-container">
+    <div class="left-container">
+      <app-costo-compra-leche></app-costo-compra-leche>
+    </div>
+    <div class="right-container">
+      <app-produccion></app-produccion>
+    </div>
+  </div>
+  <div class="bottom-container">
+    <app-table-view></app-table-view>
+  </div> 
+</div>

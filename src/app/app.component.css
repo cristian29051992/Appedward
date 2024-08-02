@@ -1,0 +1,49 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Para que abarque toda la altura de la ventana */
+  }
+  
+  .top-container {
+    display: flex;
+    height: 30%; /* 30% de la altura del contenedor principal */
+    width: 100%; /* 100% de la anchura del contenedor principal */
+    background-color: #f8f9fa; /* Color de fondo para distinguir */
+  }
+  
+  .left-container {
+    flex: 1; /* Ocupa el 50% del ancho del contenedor superior */
+    background-color: #f7faf9; /* Color de fondo para distinguir */
+  }
+  
+  .right-container {
+    flex: 1; /* Ocupa el 50% del ancho del contenedor superior */
+    background-color: #f8f5f3; /* Color de fondo para distinguir */
+  }
+  
+  .bottom-container {
+    flex: 1; /* El resto del espacio disponible */
+    width: 100%; /* 100% de la anchura del contenedor principal */
+    background-color: #e9ecef; /* Color de fondo para distinguir */
+    padding-top: 10px;
+  }
+  
+  /* app.component.css */
+mat-toolbar {
+  padding: 0 16px; /* Espaciado horizontal interno */
+  height: 30px; /* Altura del toolbar */
+}
+
+mat-toolbar .spacer {
+  flex: 1 1 auto; /* Empuja el contenido a los bordes */
+}
+
+mat-toolbar button {
+  font-size: 14px; /* Tamaño de fuente de los botones */
+  margin-left: 16px; /* Espaciado entre los botones */
+  text-transform: uppercase; /* Transformar texto a mayúsculas */
+}
+
+mat-toolbar mat-icon {
+  margin-right: 8px; /* Espaciado a la derecha del ícono */
+}
